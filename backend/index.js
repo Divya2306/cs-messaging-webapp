@@ -8,7 +8,7 @@ const socketIo = require("socket.io");
 const server = http.createServer(app);
 const io = socketIo(server); // Initialize Socket.IO
 
-mongoose.connect('mongodb://127.0.0.1/messaging_app').then(() => console.log('Database connected'))
+mongoose.connect('mongodb+srv://himanshuharsh:jiit0207@cluster0.m8ubevh.mongodb.net/messaging_app?retryWrites=true&w=majority&appName=Cluster0').then(() => console.log('Database connected'))
 .catch(err => console.error(err));
 
 
