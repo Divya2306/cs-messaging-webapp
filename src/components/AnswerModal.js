@@ -4,13 +4,13 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:5000'); // Adjust the URL as necessary
+const socket = io('https://cs-messaging-webapp-z7i3.onrender.com:5000'); // Adjust the URL as necessary
 
 const AnswerModal = ({ show, onHide, messageId }) => {
   const [answer, setAnswer] = useState('');
 
   const handleResponse = async () => {
-    const response = await fetch(`http://localhost:5000/api/messages/${messageId}`, {
+    const response = await fetch(`https://cs-messaging-webapp-z7i3.onrender.com:5000/api/messages/${messageId}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ answer }),

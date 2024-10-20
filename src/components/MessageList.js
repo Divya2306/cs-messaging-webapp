@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import MessageItem from './MessageItem';
 
-const socket = io('http://localhost:5000'); // Adjust the URL as necessary
+const socket = io('https://cs-messaging-webapp-z7i3.onrender.com:5000'); // Adjust the URL as necessary
 
 const MessageList = () => {
   const [messages, setMessages] = useState([]);
@@ -12,7 +12,7 @@ const MessageList = () => {
 
   useEffect(() => {
     const fetchMessages = async () => {
-      const response = await fetch('http://localhost:5000/api/messages'); // Adjust the URL as necessary
+      const response = await fetch('https://cs-messaging-webapp-z7i3.onrender.com:5000/api/messages'); // Adjust the URL as necessary
       const data = await response.json();
       setMessages(data);
     };
