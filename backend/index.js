@@ -13,7 +13,12 @@ mongoose.connect('mongodb+srv://himanshuharsh:jiit0207@cluster0.m8ubevh.mongodb.
 
 
 app.use(express.json());
-app.use(cors());
+const corsOrigin ={
+    origin:'https://cs-messaging-web-app.netlify.app/', //or whatever port your frontend is using
+    credentials:true,            
+    optionSuccessStatus:200
+}
+app.use(cors(corsOrigin));
 app.use('/api/messages', messageRoutes(io));
 
 

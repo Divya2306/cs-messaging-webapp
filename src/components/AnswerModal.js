@@ -25,7 +25,8 @@ const AnswerModal = ({ show, onHide, messageId }) => {
       onHide(); // Close modal
       window.location.reload(); // Refresh the page
     } else {
-      alert('Error responding to message.');
+      alert('Already answered by another agent.');
+      window.location.reload(); 
     }
   };
 
