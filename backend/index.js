@@ -9,7 +9,7 @@ const server = http.createServer(app);
 // const io = socketIo(server); // Initialize Socket.IO
 const io = new socketIo.Server(server, {
   cors: {
-    origin: "https://cs-messaging-web-app.netlify.app/", // this was localhost3000 when running locally
+    origin: "https://cs-messaging-web-app.netlify.app", // this was localhost3000 when running locally
     methods: ["GET", "POST"],
   },
   maxHttpBufferSize: 1e8,
@@ -24,7 +24,7 @@ mongoose
 
 app.use(express.json());
 const corsOrigin = {
-  origin: "https://cs-messaging-web-app.netlify.app/", //or whatever port your frontend is using
+  origin: "https://cs-messaging-web-app.netlify.app", //or whatever port your frontend is using
   credentials: true,
   optionSuccessStatus: 200,
 };
