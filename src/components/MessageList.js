@@ -31,7 +31,7 @@ const MessageList = () => {
     return () => {
       socket.off('messageAnswered'); // Clean up the listener on component unmount
     };
-  }, []);
+  }, [messages]);
 
   // Separate messages into open and closed
   const openMessages = messages.filter(msg => msg.status === 'open');
