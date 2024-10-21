@@ -23,11 +23,13 @@ const AnswerModal = ({ show, onHide, messageId }) => {
       socket.emit('messageAnswered', updatedMessage); // Emit the updated message
       alert('Response saved successfully.');
       onHide(); // Close modal
-      window.location.reload(); // Refresh the page
+      // window.location.reload(); // Refresh the page
+      
     } else {
       alert('Already answered by another agent.');
-      window.location.reload(); 
+      // window.location.reload(); 
     }
+    
   };
 
   return (
