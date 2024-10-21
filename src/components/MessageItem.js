@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaEnvelope, FaClock, FaUser } from 'react-icons/fa';
 import AnswerModal from './AnswerModal';
 import { Card, Button, Alert } from 'react-bootstrap';
-import Fade from 'react-reveal/Fade'; // Add animation
+import { motion } from 'framer-motion'; // Add animation
 import "./MessageItem.css";
 
 const MessageItem = ({ message }) => {
@@ -18,7 +18,7 @@ const MessageItem = ({ message }) => {
   };
 
   return (
-    <Fade bottom> {/* Adds a fade-in effect */}
+    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
       <Card className="mb-3 shadow-lg" style={{ borderRadius: '15px', overflow: 'hidden' }}>
         <Card.Body className="p-4">
           <div className="d-flex justify-content-between align-items-center mb-3">
@@ -52,7 +52,7 @@ const MessageItem = ({ message }) => {
           )}
         </Card.Body>
       </Card>
-    </Fade>
+    </motion.div>
   );
 };
 
