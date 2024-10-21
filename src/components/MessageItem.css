@@ -1,0 +1,33 @@
+.message-item {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background-color: white;
+  }
+  
+  .message-item:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .message-item h5 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+  }
+  
+  .message-item p {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, #26c6da, #00acc1);
+    border: none;
+    transition: background 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, #00acc1, #00838f);
+  }
+  
+  .alert-warning {
+    font-family: 'Roboto', sans-serif;
+  }
+  

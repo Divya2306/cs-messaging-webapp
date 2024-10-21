@@ -1,8 +1,7 @@
-// MessageList.js
-
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import MessageItem from './MessageItem';
+import { FaEnvelopeOpenText } from 'react-icons/fa'; // Font Awesome icon for messages
 
 const socket = io('https://cs-messaging-webapp-z7i3.onrender.com'); // Adjust the URL as necessary
 
@@ -48,7 +47,35 @@ const MessageList = () => {
 
   return (
     <div className="message-list">
-      <h2 className="text-center mb-4">Customer Messages</h2>
+      {/* Enhanced Header */}
+      <div className="header-section text-center mb-4 p-3" style={{ 
+        background: 'linear-gradient(90deg, #6a11cb 0%, #2575fc 100%)',
+        color: '#fff',
+        borderRadius: '10px',
+        padding: '20px',
+        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.2)'
+      }}>
+        <h2 className="mb-2" style={{ 
+          fontSize: '2.5rem', 
+          fontWeight: 'bold', 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center',
+          textShadow: '2px 2px 8px rgba(0, 0, 0, 0.3)',
+          letterSpacing: '1px',
+        }}>
+          <FaEnvelopeOpenText style={{ marginRight: '10px', fontSize: '2rem' }} /> 
+          Customer Messages
+        </h2>
+        <p style={{ 
+          fontSize: '1.2rem', 
+          fontWeight: '300', 
+          color: '#f1f1f1',
+          letterSpacing: '0.5px'
+        }}>
+          Manage customer queries efficiently
+        </p>
+      </div>
 
       {/* Select Dropdown for Status Filter */}
       <div className="d-flex mb-4">
@@ -58,7 +85,6 @@ const MessageList = () => {
           value={statusFilter} 
           onChange={(e) => setStatusFilter(e.target.value)}
         >
-      
           <option value="open">Open</option>
           <option value="closed">Closed</option>
         </select>
